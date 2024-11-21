@@ -23,7 +23,8 @@ for i=1:size(ans,1)
         
         disp([i, j]);
         coef = coeffvalues(f);
-        text = sprintf('%.4f*x^5 + %.4f*x^4 + %.4f*x^3 + %.4f*x^2 + %.4f*x + %.4f\n', coef(1), coef(2), coef(3), coef(4), coef(5), coef(6));
+        text = sprintf('%.4f*x^5 + %.4f*x^4 + %.4f*x^3 + %.4f*x^2 + %.4f*x + %.4f\n', ...
+            coef(1), coef(2), coef(3), coef(4), coef(5), coef(6));
         disp(text);
     end
 end
