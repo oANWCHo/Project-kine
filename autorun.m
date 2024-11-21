@@ -1,4 +1,4 @@
-R = 1.25;
+    mR = 1.25;
 L = R + 0.25;
 model = 'hand';
 % while R < 5
