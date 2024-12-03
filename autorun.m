@@ -18,7 +18,7 @@ while Radius_C < 4
       load_system(model);
       fileName = sprintf('Cylindical_R%f.mat', Radius_C);
       set_param(blockPath, 'FileName', fileName);
-      set_param(model, 'StopTime', '10');
+      set_param(model, 'StopTime', '15');
       set_param(model, 'SimulationCommand', 'start');
  
      status = get_param(model, 'SimulationStatus');
