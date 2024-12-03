@@ -35,23 +35,24 @@ $Y = l_1 \sin(\theta_1) + l_2 \sin(\theta_1 + \theta_2) + l_3 \sin(\theta_1 + \t
 
 $l_1, l_2, l_3$: Lengths of the robot arm's links.  
 
-$\theta_1, \theta_2, \theta_3 \$: Joint angles in radians.
+$\theta_1, \theta_2, \theta_3$: Joint angles in radians.
 
-### 2. Quintic Polynomial Trajectory
+### 2. Inverse Kinematic of 3-DOF Planar Robot
 
-# Quintic Polynomial
+### 3. Quintic Polynomial Trajectory
+
 
 A quintic polynomial is a 5th-order polynomial, expressed in its general form as:
 
-$\theta(t) = a_0 + a_1 t + a_2 t^2 + a_3 t^3 + a_4 t^4 + a_5 t^5\$
+$\theta(t) = a_0 + a_1 t + a_2 t^2 + a_3 t^3 + a_4 t^4 + a_5 t^5$
 
 The first derivative of the polynomial is:
 
-$\dot{\theta}(t) = a_1 + 2a_2 t + 3a_3 t^2 + 4a_4 t^3 + 5a_5 t^4\$
+$\dot{\theta}(t) = a_1 + 2a_2 t + 3a_3 t^2 + 4a_4 t^3 + 5a_5 t^4$
 
 The second derivative of the polynomial is:
 
-$\ddot{\theta}(t) = 2a_2 + 6a_3 t + 12a_4 t^2 + 20a_5 t^3\$
+$\ddot{\theta}(t) = 2a_2 + 6a_3 t + 12a_4 t^2 + 20a_5 t^3$
 
 Where $a_0, a_1, a_2, a_3, a_4$ and $a_5$ are coefficients, and $a_5 \neq 0$ to ensure the polynomial is of 5th order.
 
@@ -59,7 +60,7 @@ Where $a_0, a_1, a_2, a_3, a_4$ and $a_5$ are coefficients, and $a_5 \neq 0$ to 
 
 To determine the coefficients of the polynomial, we apply the following boundary conditions:
 - $\theta(t_0) = \theta_0$
-- $\( \theta(t_f) = \theta_f$
+- $\theta(t_f) = \theta_f$
 - $\dot{\theta}(t_0) = \dot{\theta}(t_f) = 0$
 - $\ddot{\theta}(t_0) = \ddot{\theta}(t_f) = 0$
 
@@ -79,17 +80,19 @@ $a_5 = \frac{6(\theta_f - \theta_0)}{t_f^5}$
 
 The quintic polynomial with the above coefficients satisfies the specified boundary conditions, ensuring smooth transitions in position ($\theta(t) \$), velocity ($\dot{\theta}(t) \$), and acceleration ($\ddot{\theta}(t) \$).
 
-### 3. Grasping Method
+### 4. Grasping Method
 
-**3.1 Power grasping** is a grasping style focused on strength and stability. Finger an Thumbs wrap around the object.
-![image](https://github.com/user-attachments/assets/0abe9775-4978-431c-86ac-a6c631e27555)
+**4.1 Power grasping** is a grasping style focused on strength and stability. Finger an Thumbs wrap around the object.
 
-**3.2 Precision grasping** is a grasping style focused on agility and precision. Forefingers and thumb hold the object.
-![image](https://github.com/user-attachments/assets/e12335c8-1249-40d7-bb0f-2a0ee6b9e4c5)
+"power grasping image"
 
-### 4.
-### 5.
-### 6.
+**4.2 Precision grasping** is a grasping style focused on agility and precision. Forefingers and thumb hold the object.
+
+"precision grasping image"
+
+### 5. Precision grasping taskspace calculation
+### 6. How to find Power grasping taskspace
+### 7.
 ## Implementation
 ## Results
 ## Summary
