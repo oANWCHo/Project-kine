@@ -39,8 +39,39 @@ $\theta_1, \theta_2, \theta_3$: Joint angles in radians.
 
 ### 2. Inverse Kinematic of 3-DOF Planar Robot
 
-### 3. Quintic Polynomial Trajectory
+**2.1 Calculate Wrist Position** The wrist position is calculated by compensating for the length of the third link $L_3$:
 
+ใส่รูปหุ่นพร้อมระยะ x, y, r
+
+$x_{\text{wrist}} = x - L_3 \cdot \cos(q_{\text{total}})$
+
+$y_{\text{wrist}} = y - L_3 \cdot \sin(q_{\text{total}})$
+
+**2.2 Calculate q1**
+
+ใส่รูปหุ่นพร้อม alpha beta
+
+$r = \sqrt{y_{\text{wrist}}^2 + z_{\text{wrist}}^2}$
+
+$\alpha = \text{atan2}(z_{\text{wrist}}, y_{\text{wrist}})$
+
+$\cos(\beta) = \frac{L_1^2 + r^2 - L_2^2}{2 L_1 r}$
+
+$q_1 = \alpha - \beta$
+
+**2.3 Calculate q2**
+
+ใส่รูปหุ่นพร้อม parameter
+
+$\cos(q_2) = \frac{r^2 - L_1^2 - L_2^2}{2 L_1 L_2}$
+
+$q_2 = \cos^{-1}(\cos(q_2))$
+
+**2.4 Calculate q3**
+
+$q_3 = q_{\text{total}} - q_1 - q_2$
+
+### 3. Quintic Polynomial Trajectory
 
 A quintic polynomial is a 5th-order polynomial, expressed in its general form as:
 
@@ -91,8 +122,14 @@ The quintic polynomial with the above coefficients satisfies the specified bound
 "precision grasping image"
 
 ### 5. Precision grasping taskspace calculation
-### 6. How to find Power grasping taskspace
-### 7.
+
+**5.1 Spherical Object**
+
+**5.2 Cylindrical Object**
+
+### 6. How to find Power grasping 
+
+
 ## Implementation
 ## Results
 ## Summary
