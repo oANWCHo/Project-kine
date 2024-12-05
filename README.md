@@ -21,7 +21,36 @@
 5)	Quintic Trajectory is used to control finger movement to make it look natural.
 6)	The simulation was performed using the Simscape tool on MATLAB.
 ## Installation
+clone this 
+```
+git clone https://github.com/oANWCHo/Project-kine.git
+```
+or download .zip 
+
+( This project requires MATLAB version 2024 or later. If you don't have it, please download it first. )
 ## Usage
+1) Open hand.slx file.
+2) Double click at Human_Hand Block.
+
+   ![image](https://github.com/user-attachments/assets/123a1845-e977-4aee-a666-d8916f9026fb)
+4) Fill a Parameters ( Radius, Length ,Mode 1=Spherical Power Grasping, 2=Spherical Precision Grasping, 3=Cylindrical Power Grasping, 4 = Cylindrical Precision Grasping )
+
+![image](https://github.com/user-attachments/assets/455d2198-b055-4023-b096-8decaa8f2491)
+
+5) Set up a Object in Human hand block if Sphere do like this
+
+![image](https://github.com/user-attachments/assets/dbdcb955-57c5-4b65-b818-fa1b24caca9f)
+
+Cylindrical do like this 
+
+![image](https://github.com/user-attachments/assets/6fdfb976-ea5a-4cba-9ab2-16501129bd45)
+
+Always comment out block that not use
+
+6)Click Run 
+
+![image](https://github.com/user-attachments/assets/5818b9ad-40d7-4ede-a7b8-bd2d03f8704f)
+
 ## Methodology
 ### 1. Forward Kinematic of 3-DOF Planar Robot
 
