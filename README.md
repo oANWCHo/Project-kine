@@ -115,11 +115,12 @@ The quintic polynomial with the above coefficients satisfies the specified bound
 
 **4.1 Power grasping** is a grasping style focused on strength and stability. Finger an Thumbs wrap around the object.
 
-"power grasping image"
+<img src="https://media.discordapp.net/attachments/1302279276472696842/1314220056187764786/image.png?ex=6752fa4e&is=6751a8ce&hm=cfd3608f392ac1c540849589a0f8dee98201150de8e878d5255066e1a8ab7584&=&format=webp&quality=lossless&width=445&height=427" width="480">
 
 **4.2 Precision grasping** is a grasping style focused on agility and precision. Forefingers and thumb hold the object.
 
-"precision grasping image"
+<img src="![image](https://github.com/user-attachments/assets/a0adb7a1-b4b4-4ac5-a982-fc23483e883c)
+" width="480">
 
 ### 5. Precision grasping taskspace calculation
 
