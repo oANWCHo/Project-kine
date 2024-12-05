@@ -119,8 +119,7 @@ The quintic polynomial with the above coefficients satisfies the specified bound
 
 **4.2 Precision grasping** is a grasping style focused on agility and precision. Forefingers and thumb hold the object.
 
-<img src="![image](https://github.com/user-attachments/assets/a0adb7a1-b4b4-4ac5-a982-fc23483e883c)
-" width="480">
+<img src="https://media.discordapp.net/attachments/1302279276472696842/1314220122293932054/image.png?ex=6752fa5e&is=6751a8de&hm=11f7388a8a67969a7aabb3ce614fee4044f2b568f3c0f5e37263ec1c789525ce&=&format=webp&quality=lossless&width=448&height=408" width="480">
 
 ### 5. Precision grasping taskspace calculation
 
