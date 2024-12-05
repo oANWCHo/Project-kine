@@ -41,7 +41,7 @@ $\theta_1, \theta_2, \theta_3$: Joint angles in radians.
 
 **2.1 Calculate Wrist Position** The wrist position is calculated by compensating for the length of the third link $L_3$:
 
-ใส่รูปหุ่นพร้อมระยะ x, y, r
+<img src="https://github.com/user-attachments/assets/77c1b9a8-6a83-4fbb-b3ae-a9ae84c4937b" width="480">
 
 $x_{\text{wrist}} = x - L_3 \cdot \cos(q_{\text{total}})$
 
@@ -49,7 +49,7 @@ $y_{\text{wrist}} = y - L_3 \cdot \sin(q_{\text{total}})$
 
 **2.2 Calculate q1**
 
-ใส่รูปหุ่นพร้อม alpha beta
+<img src="https://github.com/user-attachments/assets/a9453bed-2560-46dd-8bd7-1793d1d7a518" width="480">
 
 $r = \sqrt{y_{\text{wrist}}^2 + z_{\text{wrist}}^2}$
 
@@ -61,7 +61,7 @@ $q_1 = \alpha - \beta$
 
 **2.3 Calculate q2**
 
-ใส่รูปหุ่นพร้อม parameter
+<img src="https://github.com/user-attachments/assets/209f5d17-2987-43e9-8383-2bd4504d362c" width="480">
 
 $\cos(q_2) = \frac{r^2 - L_1^2 - L_2^2}{2 L_1 L_2}$
 
@@ -128,6 +128,9 @@ the white dot is the origin (0, 0).
 
 **5.1 Spherical Object**
 
+<img src="https://github.com/user-attachments/assets/034aa912-6b26-43db-a5d7-e8b80a98da7e" width="480">
+<img src="https://github.com/user-attachments/assets/16c031e2-a24b-4b04-bf60-44b75245563b" width="480">
+
 **Point 1 (Pinky Finger)**
 
 $x = 1.2$
@@ -179,6 +182,9 @@ the white dot is the origin (0, 0).
 
 **Type 1**
 
+<img src="https://github.com/user-attachments/assets/2d973978-6ec5-41f5-9a2b-67f63e29aa58" width="480">
+<img src="https://github.com/user-attachments/assets/6b3e7766-6616-4d45-b9af-e1e57ea305d1" width="480">
+
 **Point 1 (Pinky Finger)**
 
 $x = 1.2$
@@ -220,6 +226,9 @@ $y = R$
 $z = R$
 
 **Type 2**
+
+<img src="https://github.com/user-attachments/assets/590ba7ef-6bea-430a-b7aa-a609037150ea" width="480">
+<img src="https://github.com/user-attachments/assets/a37f07b9-de5b-421e-bc89-cd4bc52b2967" width="480">
 
 **Point 1 (Pinky Finger)**
 
