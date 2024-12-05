@@ -123,15 +123,158 @@ The quintic polynomial with the above coefficients satisfies the specified bound
 
 ### 5. Precision grasping taskspace calculation
 
+The pink dot is the point where the fingertip touches the object and
+the white dot is the origin (0, 0).
+
 **5.1 Spherical Object**
+
+**Point 1 (Pinky Finger)**
+
+$x = 1.2$
+
+$y = \sqrt{R^2 - 1.2^2}$
+
+$z = R$
+
+**Point 2 (Ring Finger)**
+
+$x = 0.6$
+
+$y = \sqrt{R^2 - 0.6^2}$
+
+$z = R$
+
+**Point 3 (Middle Finger)**
+
+$x = 0$
+
+$y = R$
+
+$z = R$
+
+**Point 4 (Index Finger)**
+
+$x = -0.6$
+
+$y = \sqrt{R^2 - 0.6^2}$
+
+$z = R$
+
+**Point 5 (Thumb)**
+
+$R^2 = 0.6^2 + r^2 - 2(0.6)(r)(cos(\frac{5\pi}{6}))$
+
+$r = \frac{-2(0.6)(cos(\frac{5\pi}{6}))+\sqrt{(2(0.6)(r)(cos(\frac{5\pi}{6})))^2-4(1)(0.6^2-R^2)}}{2}$
+
+$x = -0.6 - rcos(\frac{\pi}{3})$
+
+$y = rsin(\frac{\pi}{3})$
+
+$z = R$
 
 **5.2 Cylindrical Object**
 
-### 6. How to find Power grasping 
+The pink dot is the point where the fingertip touches the object and
+the white dot is the origin (0, 0).
 
+**Type 1**
+
+**Point 1 (Pinky Finger)**
+
+$x = 1.2$
+
+$y = R$
+
+$z = R$
+
+**Point 2 (Ring Finger)**
+
+$x = 0.6$
+
+$y = R$
+
+$z = R$
+
+**Point 3 (Middle Finger)**
+
+$x = 0$
+
+$y = R$
+
+$z = R$
+
+**Point 4 (Index Finger)**
+
+$x = -0.6$
+
+$y = R$
+
+$z = R$
+
+**Point 5 (Thumb)**
+
+$x = -0.6 - Rtan(\frac{\pi}{6})$
+
+$y = R$
+
+$z = R$
+
+**Type 2**
+
+**Point 1 (Pinky Finger)**
+
+$x = 1.2$
+
+$y = R$
+
+$z = R$
+
+**Point 2 (Ring Finger)**
+
+$x = 0.6$
+
+$y = R$
+
+$z = R$
+
+**Point 3 (Middle Finger)**
+
+$x = 0$
+
+$y = R$
+
+$z = R$
+
+**Point 4 (Index Finger)**
+
+$x = -0.6$
+
+$y = R$
+
+$z = R$
+
+**Point 5 (Thumb)**
+
+$x = \frac{L}{2}$
+
+$y = xsin(\frac{\pi}{6})$
+
+$z = R$
 
 ## Implementation
+
+### 6. How to find Power grasping 
+
 ## Results
+
+### 1. Spherical power grasping
+
+### 2. Spherical precision grasping
+
+### 3. Cylindrical power grasping
+
+### 4. Cylindrical precision grasping
+
 ## Summary
 ## References
 1) Unknown Author. (n.d.). Design of a 3-DOF robotic arm. Retrieved November 3, 2024, from https://www.researchgate.net/publication/313543363_Design_of_a_3_DOF_robotic_arm/link/5D24A8A2299BF1547CA6056D/DOWNLOAD?_TP=EYJJB250ZXH0IJP7INBHZ2UIOIJWDWJSAWNHDGLVBIISINBYZXZPB3VZUGFNZSI6BNVSBH19
