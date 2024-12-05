@@ -171,7 +171,7 @@ $r = \frac{-2(0.6)(cos(\frac{5\pi}{6}))+\sqrt{(2(0.6)(r)(cos(\frac{5\pi}{6})))^2
 
 $x = -0.6 - rcos(\frac{\pi}{3})$
 
-$y = rsin(\frac{\pi}{3})$
+$y = rtan(\frac{\pi}{3})$
 
 $z = R$
 
