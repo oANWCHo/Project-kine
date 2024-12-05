@@ -275,11 +275,15 @@ $z = R$
 
 It is applied in simulink which has a total of 4 blocks as follows.
 
+<img src="https://github.com/user-attachments/assets/99299aea-9687-42cb-9dd6-876f53cce05b" width="600">
 
 The simulation works as system architecture follows.
 
+<img src="https://github.com/user-attachments/assets/8c255cf8-08d7-4074-a063-277d341c2c98" width="600">
 
 ### 1. Forward Kinematics of Hand
+
+<img src="https://github.com/user-attachments/assets/acaf53b8-bf32-4a9d-8935-3f11097b84c2" width="600">
 
 The palm of hand is cylindrical shape with radius 1.5 meters and length 0.5 meters.
 
