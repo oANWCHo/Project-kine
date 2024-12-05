@@ -429,11 +429,19 @@ end
 
 ### 1. Spherical power grasping
 
+https://github.com/user-attachments/assets/17e4b689-3daa-441a-9710-1fffafa6c29f
+
 ### 2. Spherical precision grasping
+
+https://github.com/user-attachments/assets/a4045ff5-c3ef-421f-bf97-80fe2c322b2a
 
 ### 3. Cylindrical power grasping
 
+https://github.com/user-attachments/assets/f892ef29-a3c5-4d45-9996-d4bfa16f61fa
+
 ### 4. Cylindrical precision grasping
+
+https://github.com/user-attachments/assets/cafd1a16-daf2-400a-b00c-be2f1acdfa68
 
 ## Summary
 
