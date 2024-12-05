@@ -177,9 +177,6 @@ $z = R$
 
 **5.2 Cylindrical Object**
 
-The pink dot is the point where the fingertip touches the object and
-the white dot is the origin (0, 0).
-
 **Type 1**
 
 <img src="https://github.com/user-attachments/assets/2d973978-6ec5-41f5-9a2b-67f63e29aa58" width="480">
@@ -270,9 +267,159 @@ $y = xsin(\frac{\pi}{6})$
 
 $z = R$
 
+**6. How to find Power grasping**
+
+....
+
 ## Implementation
 
-### 6. How to find Power grasping 
+It is applied in simulink which has a total of 4 blocks as follows.
+
+
+The simulation works as system architecture follows.
+
+
+### 1. Forward Kinematics of Hand
+
+The palm of hand is cylindrical shape with radius 1.5 meters and length 0.5 meters.
+
+Each finger segments of index finger, middle finger, ring finger and pinky finger has 1 meter length. And each finger segments of thumb has 0.6 meter length.
+
+Transformation of MCP joint of each finger to Center of the palm is the following
+
+$T_{MCP.pinky} = T_x(1.2)T_y(0.4)$
+
+$T_{MCP.ring} = T_x(0.6)T_y(1.0)$
+
+$T_{MCP.middle} = T_y(1.1)$
+
+$T_{MCP.index} = T_x(-0.6)T_y(1.0)$
+
+$T_{MCP.thumb} = T_x(-0.6)R_z(\frac{\pi}{3})T_y(0.8)$
+
+### 2. Send End Effector Position
+
+We have 4 modes of grasping as following
+
+Mode 1 : Spherical Power Grasping
+
+Mode 2 : Spherical Precision Grasping
+
+Mode 3 : Cylindrical Power Grasping
+
+Mode 4 : Cylindrical Precision Grasping
+
+
+
+### 3. Inverse Kinematics
+
+```matlab
+% Link Length
+L1 = L(i, 1);
+L2 = L(i, 2);
+L3 = L(i, 3);
+
+% calculate in 2 DOF
+y_wrist = y - L3 * cos(q_total);
+z_wrist = z - L3 * sin(q_total);
+
+r = sqrt(y_wrist^2 + z_wrist^2);
+r = round(r * 100) / 100;
+
+% =================================================================================================
+
+% Determine if the position falls within the robot's workspace boundaries.่
+if r - (L1 + L2) > 0.01 || r - abs(L1 - L2) < 0.01
+    fprintf('Robot %.0f: Out of reach. %.4f\n\n', i, r);
+    q(:, i) = NaN;
+    continue;
+end
+
+% =================================================================================================
+
+% calculate q1
+alpha = atan2(z_wrist, y_wrist);
+cos_beta = (L1^2 + r^2 - L2^2) / (2 * L1 * r);
+
+if abs(cos_beta) > 1           
+    fprintf('Robot %.0f: No valid configuration. It %.4f\n\n', i, cos_beta);
+    q(:, i) = NaN;
+    continue;
+end
+beta = acos(cos_beta);
+
+q1 = alpha - beta;
+q1 = mod(q1, 2*pi);
+
+% =================================================================================================
+
+% calculate q2
+cos_q2 = (r^2 - L1^2 - L2^2) / (2 * L1 * L2);
+
+if abs(cos_q2) > 1
+    fprintf('Robot %.0f: No valid configuration. It %.4f\n\n', i, abs(cos_q2));
+    q(:, i) = NaN;
+    continue;
+end
+q2 = acos(cos_q2);
+q2 = mod(q2, 2*pi);
+
+% =================================================================================================
+
+% calculate q3
+q3 = q_total - q1 - q2;
+
+% store q
+q(:, i) = [q1; q2; q3] * 180 / pi;
+
+% =================================================================================================
+```
+
+### 4. Quintic Trajectory
+
+```matlab
+% trajectory generation
+
+% define time of trajectory
+tf = 3; 
+
+if run_started == 0 && button_state == 1
+    run_started = 1;
+    t_start = t;
+    
+    % compute delta_q for each joint
+    delta_q = target_q - curr_q;
+    
+    % compute coefficients for quintic polynomial trajectory
+    a0 = curr_q;
+    a1 = zeros(rows, cols);
+    a2 = zeros(rows, cols);
+    a3 = 10 * delta_q / (tf^3);
+    a4 = -15 * delta_q / (tf^4);
+    a5 = 6 * delta_q / (tf^5);
+end
+```
+
+```matlab
+% trajectory evaluation
+q = curr_q;
+if run_started == 1
+    elapsed_time = t - t_start;
+    if elapsed_time <= tf
+
+        % compute q in quintic trajectory form
+        q = a0 + a1 * elapsed_time + a2 * (elapsed_time^2) + ...
+            a3 * (elapsed_time^3) + a4 * (elapsed_time^4) + a5 * (elapsed_time^5);
+    else
+
+        % When the end time is reached, let q be equal to target.
+        q = target_q;
+        run_started = 0;
+    end
+    % update current q
+    curr_q = q;
+end
+```
 
 ## Results
 
@@ -285,6 +432,9 @@ $z = R$
 ### 4. Cylindrical precision grasping
 
 ## Summary
+
+This simulation simulates two types of spherical and cylindrical object grasping, precision grasping and power grasping on simulink, which can work correctly and answer all the objectives.
+
 ## References
 1) Unknown Author. (n.d.). Design of a 3-DOF robotic arm. Retrieved November 3, 2024, from https://www.researchgate.net/publication/313543363_Design_of_a_3_DOF_robotic_arm/link/5D24A8A2299BF1547CA6056D/DOWNLOAD?_TP=EYJJB250ZXH0IJP7INBHZ2UIOIJWDWJSAWNHDGLVBIISINBYZXZPB3VZUGFNZSI6BNVSBH19
 2) Vasičkaninová, A., Bakošová, M., & Mészáros, A. (2020). Cascade fuzzy control of a tubular chemical reactor. In R. Smith (Ed.), *Advanced Control Systems for Chemical Reactors* (pp. 150-165). Elsevier. Retrieved November 3, 2024, from https://www.sciencedirect.com/science/article/abs/pii/B9780323958790501715
