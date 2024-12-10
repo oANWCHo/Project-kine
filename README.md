@@ -1,60 +1,66 @@
-# KINEMATICS OF A 3-DOF ROBOTIC FINGER FOR CAPTURING OBJECT
+# **KINEMATICS OF A 3-DOF ROBOTIC FINGER FOR CAPTURING OBJECT**
+  "Video"
+  
   This study is interested in simulating the structure of a robotic finger with three degrees of freedom (3-DOF) and the ability to grasp objects in various forms. The design of all robotic fingers will be carried out using a tool that can efficiently simulate and test the structure. Then, the Forward Kinematics will be created for all five fingers on the same structural base to enable accurate finger positioning and movement in three dimensions. In addition, the Inverse Kinematics section is studied to calculate the Joint Position of each finger in detail. In addition, a specific algorithm that controls the grasping of objects in various forms is developed by applying the study of Quintic Trajectory to make the movement smooth and take the same time in each joint.
 
   This project is a part of FRA333 Robot Kinematics @ Institute of Field Robotics, King Mongkut’s University of Technology Thonburi.
-## Objectives
-1)	To study the creation of robotic fingers and simulate finger movements.
-2)	To study a 3-DOF robotic finger system that can grasp spherical and cylindrical objects of various sizes.
-3)	To study the relationship between the parameters of different shapes of objects and the position of each finger tip.
-4)	To study and apply Quintic Trajectory in finger movement control system.
-## Scopes
-1)	The movement of a 3-DOF finger system is simulated.
+## **Objectives**
+1) To study the creation of robotic fingers and simulate finger movements.
+2) To study a 3-DOF robotic finger system that can grasp spherical and cylindrical objects of various sizes.
+3) To study the relationship between the parameters of different shapes of objects and the position of each fingertip.
+4) To research and apply Quintic Trajectory in finger movement control system.
+
+## **Scopes**
+
+1) The movement of a 3-DOF finger system is simulated.
     * Use Quintic Trajectory to pass the position of each joint only to calculate Forward Kinematics.
     * A study was conducted on Inverse Kinematics to calculate the Joint Position of each finger.
     * There is no study on Dynamics.
-3)	Scope of 3-DOF Robotic Finger
+2) Scope of 3-DOF Robotic Finger
     * It is a Planar Robot or a robot that moves on a plane.
-    * 3-DOF Robotic Finger has 5 fingers in total, which together form one human hand.
-4)	There are demonstrations of holding objects and shapes of different sizes, such as cylinders and spheres.
-    * Sphere
-  	* Cylinder
-5)	Quintic Trajectory is used to control finger movement to make it look natural.
-6)	The simulation was performed using the Simscape tool on MATLAB.
-## Installation
+    * 3-DOF Robotic Finger has five fingers, which together form one human hand.
+3) There are demonstrations of holding objects and shapes of different sizes, such as cylinders and spheres.
+4) Quintic Trajectory is used to control finger movement to make it look natural.
+5) The simulation was performed using the Simscape tool on MATLAB.
+
+## **Installation**
 clone this 
 ```
 git clone https://github.com/oANWCHo/Project-kine.git
 ```
 or download .zip 
 
-( This project requires MATLAB version 2024 or later. If you don't have it, please download it first. )
-## Usage
+( This project requires MATLAB version 2024b or later. If you don't have it, please download it first.)
+## **Usage**
 1) Open hand.slx file.
-2) Double click at Human_Hand Block.
+2) Double-click at Human_Hand Block.
 
-   ![image](https://github.com/user-attachments/assets/123a1845-e977-4aee-a666-d8916f9026fb)
-4) Fill a Parameters ( Radius, Length ,Mode 1=Spherical Power Grasping, 2=Spherical Precision Grasping, 3=Cylindrical Power Grasping, 4 = Cylindrical Precision Grasping )
+<img src="https://github.com/user-attachments/assets/123a1845-e977-4aee-a666-d8916f9026fb" width="480">
 
-![image](https://github.com/user-attachments/assets/455d2198-b055-4023-b096-8decaa8f2491)
+3) Fill a Parameters ( Radius, Length, Mode 1=Spherical Power Grasping, 2=Spherical Precision Grasping, 3=Cylindrical Power Grasping, 4 = Cylindrical Precision Grasping )
 
-5) Set up a Object in Human hand block if Sphere do like this
+<img src="https://github.com/user-attachments/assets/455d2198-b055-4023-b096-8decaa8f2491" width="480">
 
-![image](https://github.com/user-attachments/assets/dbdcb955-57c5-4b65-b818-fa1b24caca9f)
+4) Set up an Object in a Human hand block
 
-Cylindrical do like this 
+if the sphere does this
 
-![image](https://github.com/user-attachments/assets/6fdfb976-ea5a-4cba-9ab2-16501129bd45)
+<img src="https://github.com/user-attachments/assets/dbdcb955-57c5-4b65-b818-fa1b24caca9f" width="480">
 
-Always comment out block that not use
+Cylindrical do like this. 
 
-6)Click Run 
+<img src="https://github.com/user-attachments/assets/6fdfb976-ea5a-4cba-9ab2-16501129bd45" width="480">
 
-![image](https://github.com/user-attachments/assets/5818b9ad-40d7-4ede-a7b8-bd2d03f8704f)
+Always comment out blocks that are not used.
 
-## Methodology
-### 1. Forward Kinematic of 3-DOF Planar Robot
+5) Click Run 
 
-![image](https://github.com/user-attachments/assets/95b06245-4b5a-4fde-8ef2-2b8a1f76756f)
+<img src="https://github.com/user-attachments/assets/5818b9ad-40d7-4ede-a7b8-bd2d03f8704f" width="480">
+
+## **Methodology**
+### **1. Forward Kinematic of 3-DOF Planar Robot**
+
+<img src="https://github.com/user-attachments/assets/95b06245-4b5a-4fde-8ef2-2b8a1f76756f" width="480">
 
 $X = l_1 \cos(\theta_1) + l_2 \cos(\theta_1 + \theta_2) + l_3 \cos(\theta_1 + \theta_2 + \theta_3)$
 
@@ -66,7 +72,7 @@ $l_1, l_2, l_3$: Lengths of the robot arm's links.
 
 $\theta_1, \theta_2, \theta_3$: Joint angles in radians.
 
-### 2. Inverse Kinematic of 3-DOF Planar Robot
+### **2. Inverse Kinematic of 3-DOF Planar Robot**
 
 **2.1 Calculate Wrist Position** The wrist position is calculated by compensating for the length of the third link $L_3$:
 
@@ -100,7 +106,7 @@ $q_2 = \cos^{-1}(\cos(q_2))$
 
 $q_3 = q_{\text{total}} - q_1 - q_2$
 
-### 3. Quintic Polynomial Trajectory
+### **3. Quintic Polynomial Trajectory**
 
 A quintic polynomial is a 5th-order polynomial, expressed in its general form as:
 
@@ -142,7 +148,7 @@ The quintic polynomial with the above coefficients satisfies the specified bound
 
 ### 4. Grasping Method
 
-**4.1 Power grasping** is a grasping style focused on strength and stability. Finger an Thumbs wrap around the object.
+**4.1 Power grasping** is a grasping style focused on strength and stability. Fingers and Thumbs wrap around the object.
 
 <img src="https://media.discordapp.net/attachments/1302279276472696842/1314220056187764786/image.png?ex=6752fa4e&is=6751a8ce&hm=cfd3608f392ac1c540849589a0f8dee98201150de8e878d5255066e1a8ab7584&=&format=webp&quality=lossless&width=445&height=427" width="480">
 
@@ -150,12 +156,11 @@ The quintic polynomial with the above coefficients satisfies the specified bound
 
 <img src="https://media.discordapp.net/attachments/1302279276472696842/1314220122293932054/image.png?ex=6752fa5e&is=6751a8de&hm=11f7388a8a67969a7aabb3ce614fee4044f2b568f3c0f5e37263ec1c789525ce&=&format=webp&quality=lossless&width=448&height=408" width="480">
 
-### 5. Precision grasping taskspace calculation
+### **5. Precision grasping taskspace calculation**
 
-The pink dot is the point where the fingertip touches the object and
-the white dot is the origin (0, 0).
+The pink dot is the point where the fingertip touches the object and the white dot is the origin (0, 0).
 
-**5.1 Spherical Object**
+### **5.1 Spherical Object**
 
 <img src="https://github.com/user-attachments/assets/034aa912-6b26-43db-a5d7-e8b80a98da7e" width="480">
 <img src="https://github.com/user-attachments/assets/16c031e2-a24b-4b04-bf60-44b75245563b" width="480">
@@ -204,9 +209,9 @@ $y = rtan(\frac{\pi}{3})$
 
 $z = R$
 
-**5.2 Cylindrical Object**
+### **5.2 Cylindrical Object**
 
-**Type 1**
+### **Type 1**
 
 <img src="https://github.com/user-attachments/assets/2d973978-6ec5-41f5-9a2b-67f63e29aa58" width="480">
 <img src="https://github.com/user-attachments/assets/6b3e7766-6616-4d45-b9af-e1e57ea305d1" width="480">
@@ -251,7 +256,7 @@ $y = R$
 
 $z = R$
 
-**Type 2**
+### **Type 2**
 
 <img src="https://github.com/user-attachments/assets/590ba7ef-6bea-430a-b7aa-a609037150ea" width="480">
 <img src="https://github.com/user-attachments/assets/a37f07b9-de5b-421e-bc89-cd4bc52b2967" width="480">
@@ -298,7 +303,17 @@ $z = R$
 
 **6. How to find Power grasping**
 
-....
+Find the fingertip of all 5 fingers like this.
+
+"Photo power grasping"
+
+We write the MATLAB code to collect this data in various shapes and sizes like this.
+
+"Video collect data"
+
+Lastly, we use this data to fit the equation of fingertip position and the parameter of each shape.
+
+"Photo fit data"
 
 ## Implementation
 
@@ -314,11 +329,11 @@ The simulation works as system architecture follows.
 
 <img src="https://github.com/user-attachments/assets/acaf53b8-bf32-4a9d-8935-3f11097b84c2" width="600">
 
-The palm of hand is cylindrical shape with radius 1.5 meters and length 0.5 meters.
+The palm of the hand is cylindrical in shape with a radius of 1.5 meters and a length of 0.5 meters.
 
-Each finger segments of index finger, middle finger, ring finger and pinky finger has 1 meter length. And each finger segments of thumb has 0.6 meter length.
+Each finger segment of the index finger, middle finger, ring finger, and pinky finger has 1 meter length. Each finger segment of the thumb has a 0.6-meter length.
 
-Transformation of MCP joint of each finger to Center of the palm is the following
+Transformation of the MCP joint of each finger to the Center of the palm is the following.
 
 $T_{MCP.pinky} = T_x(1.2)T_y(0.4)$
 
@@ -342,7 +357,13 @@ Mode 3 : Cylindrical Power Grasping
 
 Mode 4 : Cylindrical Precision Grasping
 
+Example of Equation of Power grasping
 
+"Photo equation power grasping"
+
+Example of Equation of Precision grasping
+
+"Photo equation precision grasping"
 
 ### 3. Inverse Kinematics
 
@@ -474,7 +495,10 @@ https://github.com/user-attachments/assets/cafd1a16-daf2-400a-b00c-be2f1acdfa68
 
 ## Summary
 
-This simulation simulates two types of spherical and cylindrical object grasping, precision grasping and power grasping on simulink, which can work correctly and answer all the objectives.
+This simulation models two types of object grasping: spherical and cylindrical. For precision grasping of a sphere, the radius ranges from 1.20 to 1.70 m. 
+For cylindrical boundary grasping, where the thumb is at the cross-section, the radius ranges from 1.00 to 1.50 m, and the length ranges from 2.40 to 4.00 m. 
+For cylindrical boundary grasping, where the thumb is on the curve, the radius is 1.00 m, and the length is greater than 4.5 m. For power grasping, the radius ranges from 1.50 to 3.00 m, 
+and another cylindrical boundary radius ranges from 1.00 to 2.90 m, with lengths ranging from 2.40 to 5.00 m. This simulation was conducted in Simulink, and it performed correctly to meet all the specified objectives.
 
 ## References
 1) Unknown Author. (n.d.). Design of a 3-DOF robotic arm. Retrieved November 3, 2024, from https://www.researchgate.net/publication/313543363_Design_of_a_3_DOF_robotic_arm/link/5D24A8A2299BF1547CA6056D/DOWNLOAD?_TP=EYJJB250ZXH0IJP7INBHZ2UIOIJWDWJSAWNHDGLVBIISINBYZXZPB3VZUGFNZSI6BNVSBH19
