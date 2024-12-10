@@ -1,7 +1,7 @@
 # **KINEMATICS OF A 3-DOF ROBOTIC FINGER FOR CAPTURING OBJECT**
 
-  "Video"
-  
+https://github.com/user-attachments/assets/a79653ee-c063-41ca-95e4-d949facc65fb
+
   This study is interested in simulating the structure of a robotic finger with three degrees of freedom (3-DOF) and the ability to grasp objects in various forms. The design of all robotic fingers will be carried out using a tool that can efficiently simulate and test the structure. Then, the Forward Kinematics will be created for all five fingers on the same structural base to enable accurate finger positioning and movement in three dimensions. In addition, the Inverse Kinematics section is studied to calculate the Joint Position of each finger in detail. In addition, a specific algorithm that controls the grasping of objects in various forms is developed by applying the study of Quintic Trajectory to make the movement smooth and take the same time in each joint.
 
   This project is a part of FRA333 Robot Kinematics @ Institute of Field Robotics, King Mongkut’s University of Technology Thonburi.
@@ -52,7 +52,7 @@ Cylindrical do like this.
 
 <img src="https://github.com/user-attachments/assets/6fdfb976-ea5a-4cba-9ab2-16501129bd45" width="480">
 
-Always comment out blocks that are not used.
+**Always comment out blocks that are not used.**
 
 5) Click Run 
 
@@ -306,24 +306,25 @@ $z = R$
 
 Find the fingertip of all 5 fingers like this.
 
-![2](https://github.com/user-attachments/assets/da1ec475-7d04-4a12-be0f-d917dd6bb607)
+<img src="https://github.com/user-attachments/assets/da1ec475-7d04-4a12-be0f-d917dd6bb607" width="480">
 
 We write the MATLAB code to collect this data in various shapes and sizes like this.
 
-"Video collect data"
+https://github.com/user-attachments/assets/46f6ebce-93a0-4313-8e78-e6f822e48ba9
 
 Lastly, we use this data to fit the equation of fingertip position and the parameter of each shape.
 
-![image](https://github.com/user-attachments/assets/2f356224-5f17-4686-9e90-57f0b20cf8b5)
+<img src="https://github.com/user-attachments/assets/2f356224-5f17-4686-9e90-57f0b20cf8b5" width="480">
 
 Example of Equation of Power grasping
 
-![5](https://github.com/user-attachments/assets/ffe1d485-4a23-46ff-a691-e8f5895f81ae)
+<img src="https://github.com/user-attachments/assets/ffe1d485-4a23-46ff-a691-e8f5895f81ae" width="480">
 
 ## Implementation
 
 It is applied in simulink which has a total of 4 blocks as follows.
 
+<img src="https://github.com/user-attachments/assets/da1ec475-7d04-4a12-be0f-d917dd6bb607" width="480">
 <img src="https://github.com/user-attachments/assets/99299aea-9687-42cb-9dd6-876f53cce05b" width="600">
 
 The simulation works as system architecture follows.
@@ -500,7 +501,7 @@ https://github.com/user-attachments/assets/cafd1a16-daf2-400a-b00c-be2f1acdfa68
 This simulation models two types of object grasping: spherical and cylindrical. For precision grasping of a sphere, the radius ranges from 1.20 to 1.70 m. 
 For cylindrical boundary grasping, where the thumb is at the cross-section, the radius ranges from 1.00 to 1.50 m, and the length ranges from 2.40 to 4.00 m. 
 For cylindrical boundary grasping, where the thumb is on the curve, the radius is 1.00 m, and the length is greater than 4.5 m. For power grasping, the radius ranges from 1.50 to 3.00 m, 
-and another cylindrical boundary radius ranges from 1.00 to 2.90 m, with lengths ranging from 2.40 to 5.00 m. This simulation was conducted in Simulink, and it performed correctly to meet all the specified objectives.
+and another cylindrical boundary radius ranges from 1.00 to 2.90 m, with lengths ranging from 2.40 to 5.00 m. This simulation was conducted in Simulink, starting with the send end effector position to calculate inverse kinematics and control the smoothness of the human hand with trajectory, it performed correctly to meet all the specified objectives.
 
 ## References
 1) Unknown Author. (n.d.). Design of a 3-DOF robotic arm. Retrieved November 3, 2024, from https://www.researchgate.net/publication/313543363_Design_of_a_3_DOF_robotic_arm/link/5D24A8A2299BF1547CA6056D/DOWNLOAD?_TP=EYJJB250ZXH0IJP7INBHZ2UIOIJWDWJSAWNHDGLVBIISINBYZXZPB3VZUGFNZSI6BNVSBH19
