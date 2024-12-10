@@ -1,4 +1,5 @@
 # **KINEMATICS OF A 3-DOF ROBOTIC FINGER FOR CAPTURING OBJECT**
+
   "Video"
   
   This study is interested in simulating the structure of a robotic finger with three degrees of freedom (3-DOF) and the ability to grasp objects in various forms. The design of all robotic fingers will be carried out using a tool that can efficiently simulate and test the structure. Then, the Forward Kinematics will be created for all five fingers on the same structural base to enable accurate finger positioning and movement in three dimensions. In addition, the Inverse Kinematics section is studied to calculate the Joint Position of each finger in detail. In addition, a specific algorithm that controls the grasping of objects in various forms is developed by applying the study of Quintic Trajectory to make the movement smooth and take the same time in each joint.
@@ -305,7 +306,7 @@ $z = R$
 
 Find the fingertip of all 5 fingers like this.
 
-"Photo power grasping"
+![2](https://github.com/user-attachments/assets/da1ec475-7d04-4a12-be0f-d917dd6bb607)
 
 We write the MATLAB code to collect this data in various shapes and sizes like this.
 
@@ -313,7 +314,11 @@ We write the MATLAB code to collect this data in various shapes and sizes like t
 
 Lastly, we use this data to fit the equation of fingertip position and the parameter of each shape.
 
-"Photo fit data"
+![image](https://github.com/user-attachments/assets/2f356224-5f17-4686-9e90-57f0b20cf8b5)
+
+Example of Equation of Power grasping
+
+![5](https://github.com/user-attachments/assets/ffe1d485-4a23-46ff-a691-e8f5895f81ae)
 
 ## Implementation
 
@@ -347,23 +352,20 @@ $T_{MCP.thumb} = T_x(-0.6)R_z(\frac{\pi}{3})T_y(0.8)$
 
 ### 2. Send End Effector Position
 
-We have 4 modes of grasping as following
+We have 4 modes of grasping and each grasping has different boundaries as follows
 
 Mode 1 : Spherical Power Grasping
+the radius ranges from 1.50 to 3.00 m.
 
 Mode 2 : Spherical Precision Grasping
+the radius ranges from 1.20 to 1.70 m.
 
 Mode 3 : Cylindrical Power Grasping
+radius ranges from 1.00 to 2.90 m, with lengths ranging from 2.40 to 5.00 m.
 
 Mode 4 : Cylindrical Precision Grasping
-
-Example of Equation of Power grasping
-
-"Photo equation power grasping"
-
-Example of Equation of Precision grasping
-
-"Photo equation precision grasping"
+where the thumb is at the cross-section, the radius ranges from 1.00 to 1.50 m, and the length ranges from 2.40 to 4.00 m. 
+where the thumb is on the curve, the radius is 1.00 m, and the length is greater than 4.5 m.
 
 ### 3. Inverse Kinematics
 
